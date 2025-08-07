@@ -7,9 +7,10 @@ import SummrHeroBanner from '@/assets/Home/Banner.png';
 
 //Product
 import Deodorant from '@/assets/Home/deodorant.png'
+import DeodorantMobile from '@/assets/Home/deodorant-mobile.png'
 
 //Team
 import DeepikaImg from '@/assets/Team/Deepika.png'
 
 
-export { SummrLogoWhite, SummrLogoBlue, SummrHeroBanner, Deodorant, DeepikaImg };
+export { SummrLogoWhite, SummrLogoBlue, SummrHeroBanner, Deodorant, DeodorantMobile, DeepikaImg };

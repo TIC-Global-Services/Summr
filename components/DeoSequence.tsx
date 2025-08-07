@@ -9,7 +9,7 @@ import { DermaIcon, GenderIcon, NaturalIcon, ResidueIcon, SmoothIcon } from '@/a
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const productDetail = [
+export const productDetail = [
   {
     text: '96% natural ingredients',
     icon: NaturalIcon
@@ -44,7 +44,7 @@ const DeoSequence = () => {
   const canvasRef = useRef(null);
   const canvasContainerRef = useRef(null);
   const deodorantImageRef = useRef(null);
-  
+
   const [images, setImages] = useState([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
@@ -63,7 +63,7 @@ const DeoSequence = () => {
           })
         );
       }
-      
+
       const loadedImages = await Promise.all(imagePromises);
       const validImages = loadedImages.filter((img): img is HTMLImageElement => img !== null);
       setImages(validImages as any);
@@ -104,16 +104,16 @@ const DeoSequence = () => {
       duration: 6,
       ease: "power2.inOut"
     }, 0)
-    .to(leftRef.current, {
-      opacity: 0,
-      duration: 3,
-      ease: "power2.inOut"
-    }, 2)
-    .to(deodorantImageRef.current, {
-      scale: 1.2,
-      duration: 6,
-      ease: "power2.inOut"
-    }, 0);
+      .to(leftRef.current, {
+        opacity: 0,
+        duration: 3,
+        ease: "power2.inOut"
+      }, 2)
+      .to(deodorantImageRef.current, {
+        scale: 1.2,
+        duration: 6,
+        ease: "power2.inOut"
+      }, 0);
 
     // Phase 2: Content background appears
     masterTl.to(contentRef.current, {
@@ -166,13 +166,13 @@ const DeoSequence = () => {
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
-      
+
       // Set canvas size to full screen
       const resizeCanvas = () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       };
-      
+
       resizeCanvas();
       window.addEventListener('resize', resizeCanvas);
 
@@ -181,14 +181,14 @@ const DeoSequence = () => {
       const drawFrame = (frameIndex: number) => {
         if (images[frameIndex]) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          
+
           const img = images[frameIndex] as HTMLImageElement;
           const canvasAspect = canvas.width / canvas.height;
           const imageAspect = img.width / img.height;
-          
+
           let drawWidth, drawHeight, offsetX, offsetY;
           const scaleFactor = 1.05; // 20% larger images
-          
+
           if (canvasAspect > imageAspect) {
             // Canvas is wider than image
             drawHeight = canvas.height * scaleFactor;
@@ -202,7 +202,7 @@ const DeoSequence = () => {
             offsetX = (canvas.width - drawWidth) / 2;
             offsetY = (canvas.height - drawHeight) / 2;
           }
-          
+
           ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
         }
       };
@@ -211,13 +211,13 @@ const DeoSequence = () => {
       masterTl.to({}, {
         duration: 8,
         ease: "none",
-        onUpdate: function() {
+        onUpdate: function () {
           const progress = this.progress();
           const frameIndex = Math.min(
             Math.floor(progress * (images.length - 1)),
             images.length - 1
           );
-          
+
           if (frameIndex !== currentFrame) {
             currentFrame = frameIndex;
             drawFrame(frameIndex);
@@ -231,7 +231,7 @@ const DeoSequence = () => {
     // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      window.removeEventListener('resize', () => {});
+      window.removeEventListener('resize', () => { });
     };
   }, [imagesLoaded, images]);
 
@@ -282,10 +282,10 @@ const DeoSequence = () => {
                       <span className='text-lg leading-tight'>
                         {detail.text}
                       </span>
-                      <Image 
-                        src={detail.icon} 
-                        alt={detail.text} 
-                        width={32} 
+                      <Image
+                        src={detail.icon}
+                        alt={detail.text}
+                        width={32}
                         height={32}
                         className='flex-shrink-0'
                       />
@@ -316,5 +316,6 @@ const DeoSequence = () => {
     </div>
   );
 };
+
 
 export default DeoSequence;
