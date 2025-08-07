@@ -128,13 +128,13 @@ const Mobile3D: React.FC = () => {
             const canvasAspect = canvas.width / canvas.height; // 9/16 ≈ 0.5625
             const imageAspect = img.width / img.height; // 16/9 ≈ 1.7778
 
-            let drawWidth, drawHeight, offsetX, offsetY;
+ 
             const zoomFactor = 2.5; // Zoom to fill 9:16 canvas
 
-            drawWidth = (canvas.width / window.devicePixelRatio) * zoomFactor;
-            drawHeight = drawWidth / imageAspect;
-            offsetX = ((canvas.width / window.devicePixelRatio) - drawWidth) / 2;
-            offsetY = ((canvas.height / window.devicePixelRatio) - drawHeight) / 2;
+            const drawWidth = (canvas.width / window.devicePixelRatio) * zoomFactor;
+            const drawHeight = drawWidth / imageAspect;
+            const offsetX = ((canvas.width / window.devicePixelRatio) - drawWidth) / 2;
+            const offsetY = ((canvas.height / window.devicePixelRatio) - drawHeight) / 2;
 
             ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
         };
