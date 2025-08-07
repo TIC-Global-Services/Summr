@@ -120,7 +120,7 @@ const DeoSequence = () => {
       opacity: 1,
       duration: 1,
       ease: "power2.out"
-    }, 6);
+    }, 4);
 
     // Phase 3: Title animation
     masterTl.to(titleRef.current, {
@@ -128,7 +128,7 @@ const DeoSequence = () => {
       y: 0,
       duration: 2,
       ease: "power3.out"
-    }, 7);
+    }, 6);
 
     // Phase 4: Features list animation
     masterTl.to(featuresRef.current, {
@@ -136,7 +136,7 @@ const DeoSequence = () => {
       y: 0,
       duration: 3,
       ease: "power3.out"
-    }, 9);
+    }, 8);
 
     // Phase 5: Description animation
     masterTl.to(descriptionRef.current, {
@@ -144,21 +144,21 @@ const DeoSequence = () => {
       y: 0,
       duration: 2,
       ease: "power3.out"
-    }, 12);
+    }, 10);
 
     // Phase 6: Content fades out
     masterTl.to(contentRef.current, {
       opacity: 0,
       duration: 2,
       ease: "power2.inOut"
-    }, 14);
+    }, 11);
 
     // Phase 7: Canvas appears
     masterTl.to(canvasContainerRef.current, {
       opacity: 1,
       duration: 1,
       ease: "power2.out"
-    }, 16);
+    }, 13);
 
     // Image sequence animation
     if (imagesLoaded && images.length > 0) {
@@ -223,7 +223,7 @@ const DeoSequence = () => {
             drawFrame(frameIndex);
           }
         }
-      }, 17);
+      }, 13);
 
       drawFrame(0);
     }
@@ -236,7 +236,7 @@ const DeoSequence = () => {
   }, [imagesLoaded, images]);
 
   return (
-    <div ref={containerRef} className='relative border-b' style={{ height: '600vh' }}>
+    <div ref={containerRef} className='relative border-b' >
       <div ref={stickyRef} className='h-screen relative overflow-hidden'>
         <div
           ref={leftRef}

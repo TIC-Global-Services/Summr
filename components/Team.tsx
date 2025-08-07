@@ -6,7 +6,7 @@ const Team = () => {
   return (
     <div className="h-screen flex flex-col md:flex-row border-b">
       {/* Left Section: Image */}
-      <div className="w-full md:w-1/2 h-1/2 md:h-full relative ">
+      <div className="w-full md:w-1/2 h-full relative ">
         <Image
           src={DeepikaImg}
           alt="Deepika"
