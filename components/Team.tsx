@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const Team = () => {
   return (
-    <div className="h-screen flex flex-col md:flex-row border-b">
+    <div className="min-h-screen flex flex-col md:flex-row border-y">
       {/* Left Section: Image */}
-      <div className="w-full md:w-1/2 h-full relative ">
+      <div className="w-full md:w-1/2 min-h-[400px] md:h-screen relative ">
         <Image
           src={DeepikaImg}
           alt="Deepika"

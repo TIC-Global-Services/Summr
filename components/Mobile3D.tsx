@@ -177,7 +177,7 @@ const Mobile3D: React.FC = () => {
     }
 
     return (
-        <div ref={containerRef} className="relative min-h-screen">
+        <div ref={containerRef} className="relative min-h-screen border-y">
             <div ref={stickyRef} className="min-h-screen">
                 <div ref={canvasContainerRef} className="absolute inset-0 z-30 flex items-center justify-center">
                     <canvas
