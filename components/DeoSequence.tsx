@@ -1,6 +1,6 @@
 'use client'
 import { Deodorant } from '@/assets';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -298,7 +298,7 @@ const DeoSequence = () => {
                 <div className='max-w-sm'>
                   <p className='text-base leading-relaxed'>
                     A clean, plant-powered roll-on that keeps odor in check—without aluminum, parabens, or the stickiness.
-                    Lightly scented, ultra-smooth, and quick-drying, it's designed for all-day comfort even on the hottest days.
+                    Lightly scented, ultra-smooth, and quick-drying, it&apos;s designed for all-day comfort even on the hottest days.
                   </p>
                 </div>
               </div>

@@ -51,14 +51,14 @@ const Footer = () => {
                 </div>
                 <div className=' flex text-xl space-x-4'>
                     {socials.map((item, index) => (
-                        <div className=' text-primary'>
+                        <div key={index} className=' text-primary'>
                             <Link href={item.link}><item.icon /></Link>
                         </div>
                     ))}
                 </div>
                 <div className=' flex space-x-4'>
                     {contact.map((item, index) => (
-                        <div className=' flex text-xl items-center gap-2'>
+                        <div key={index} className=' flex text-xl items-center gap-2'>
                             <item.icon className=' text-primary' />
                             <p className=' text-base'>{item.text}</p>
                         </div>
