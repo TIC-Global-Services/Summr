@@ -98,7 +98,7 @@ const Mobile3D: React.FC = () => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: 'top top',
-                end: '+=800vh',
+                end: '+=1000vh',
                 scrub: 0.2,
                 pin: stickyRef.current,
                 anticipatePin: 1,

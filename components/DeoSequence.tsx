@@ -82,7 +82,7 @@ const DeoSequence = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=1200vh",
+        end: "+=3000vh",
         scrub: 0.5,
         pin: stickyRef.current,
         markers: false,
@@ -236,7 +236,7 @@ const DeoSequence = () => {
   }, [imagesLoaded, images]);
 
   return (
-    <div ref={containerRef} className='relative border-b' style={{ height: '300vh' }}>
+    <div ref={containerRef} className='relative border-b' style={{ height: '600vh' }}>
       <div ref={stickyRef} className='h-screen relative overflow-hidden'>
         <div
           ref={leftRef}
