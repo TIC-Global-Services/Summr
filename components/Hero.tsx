@@ -50,8 +50,9 @@ const Hero = () => {
           alt="Deodorant"
           width={350}
           height={600}
-          className='object-top rotate-12'
+          className='object-top scale-[1.7] -rotate-12'
           priority
+          quality={100}
         />
       </div>
 
