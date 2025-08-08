@@ -368,7 +368,7 @@ const DeoSequence = () => {
                   <div className=' max-w-[250px]'>
                     <h3 className='text-lg font-semibold uppercase'>Refill</h3>
                     <p className='text-xs leading-relaxed'>
-                      96% natural formula with zero plastic waste. Just pop in and you're ready to go.
+                      96% natural formula with zero plastic waste. Just pop in and you&apos;re ready to go.
                     </p>
                   </div>
                 </div>
