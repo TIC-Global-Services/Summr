@@ -1,9 +1,9 @@
-import {  DeodorantMobile } from "@/assets";
+import { DeodorantMobile } from "@/assets";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { productDetail } from "./DeoSequence";
 import Mobile3D from "./Mobile3D";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,14 +14,14 @@ export const DeoSequenceMobile = () => {
     <div className="relative">
       <div >
         <div className="mt-20 flex flex-col justify-center px-4 z-10 text-center">
-          <h1 className="text-4xl font-medium uppercase text-primary">
-            Feel <span className="font-rofane italic">Fresh .</span> <br />
-            <span className="font-rofane italic">Live</span> Free
+
+          <h1 className='text-4xl md:text-6xl font-medium'>
+            Tested & Proven: <br />
+            Fresher, Cleaner, <br />
+            Better.
           </h1>
-          <p className="text-lg mt-4">
-            Introducing Summr—a clean, skin-loving roll-on deodorant made for
-            everyday freshness, naturally.
-          </p>
+
+
         </div>
 
         <div className="w-full flex items-center justify-center">
@@ -35,48 +35,34 @@ export const DeoSequenceMobile = () => {
           />
         </div>
 
-        <div className="py-8">
+        <div className="pt-8 pb-20">
           <div className="text-center px-4">
-            <h2 className="text-2xl font-medium text-primary tracking-wider">
-              MEET YOUR <span className="italic font-rofane">UNDERARMS</span> NEW
-              BFF
+            <h2 className=' text-lg md:text-base font-medium tracking-tighter'>
+              Summr keeps you fresh like any roll-on— <br />just cleaner, safer, and kinder to the <br />planet.
             </h2>
           </div>
 
           <div className="flex flex-col md:flex-row px-6 mt-6">
-            <div className="w-full md:w-1/2 flex ">
+            <div className="w-full md:w-1/2 flex px-4">
               <div className="space-y-3 max-w-sm">
-                {productDetail.map((detail, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <span className="text-base leading-tight">
-                      {detail.text}
-                    </span>
-                    <Image
-                      src={detail.icon}
-                      alt={detail.text}
-                      width={24}
-                      height={24}
-                      className="flex-shrink-0"
-                    />
-                  </div>
-                ))}
+                <h1 className=' text-lg  tracking-tight list-item'>
+                  96% natural ingredients
+                </h1>
+                <h1 className='text-lg  tracking-tight list-item'>
+                  Plant-powered, no nasties, all-day fresh.
+                </h1>
               </div>
             </div>
 
             <div className="w-full md:w-1/2 flex justify-center items-start pt-6 md:pt-8">
-              <div className="max-w-sm">
-                <p className="text-sm leading-relaxed">
-                  A clean, plant-powered roll-on that keeps odor in check—without
-                  aluminum, parabens, or the stickiness. Lightly scented,
-                  ultra-smooth, and quick-drying, it&apos;s designed for all-day
-                  comfort even on the hottest days.
-                </p>
+              <div className=' max-w-md text-base text-start'>
+                <p>The life cycle assessment of Summr was conducted by leading sustainability experts at Anthesis. The report was third-party reviewed and completed in accordance with ISO 14040 and 14044 standards.</p>
               </div>
             </div>
           </div>
         </div>
 
-       <Mobile3D />
+        <Mobile3D />
       </div>
     </div>
   );

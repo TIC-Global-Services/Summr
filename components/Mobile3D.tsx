@@ -20,10 +20,10 @@ const Mobile3D: React.FC = () => {
         const loadImages = async () => {
             try {
                 const imagePromises: Promise<HTMLImageElement | null>[] = [];
-                for (let i = 1; i <= 150; i++) {
+                for (let i = 1; i <= 250; i++) {
                     const img = new window.Image();
                     const paddedNumber = i.toString().padStart(4, '0');
-                    img.src = `/DeoSeq/pillow/${paddedNumber}.webp`;
+                    img.src = `/DeoSeq/${paddedNumber}.png`;
                     imagePromises.push(
                         new Promise((resolve) => {
                             img.onload = () => resolve(img);
@@ -129,7 +129,7 @@ const Mobile3D: React.FC = () => {
             const imageAspect = img.width / img.height; // 16/9 ≈ 1.7778
 
  
-            const zoomFactor = 2.5; // Zoom to fill 9:16 canvas
+            const zoomFactor = 1.5; // Zoom to fill 9:16 canvas
 
             const drawWidth = (canvas.width / window.devicePixelRatio) * zoomFactor;
             const drawHeight = drawWidth / imageAspect;

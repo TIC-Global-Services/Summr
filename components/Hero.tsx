@@ -4,7 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SummrHeroBanner, SummrLogoWhite } from '@/assets';
+import { SummrHeroBanner, SummrLogoWhite, Deodorant } from '@/assets';
+import DeodorantPng from '@/assets/Home/deodorant-png.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,8 +37,20 @@ const Hero = () => {
         <Image
           src={SummrHeroBanner}
           alt="Summr Hero Banner"
-          layout="fill"
+          fill
           objectFit="cover"
+          className=' object-cover'
+          priority
+        />
+      </div>
+
+      <div className='absolute inset-0 flex items-center justify-center'>
+        <Image
+          src={DeodorantPng}
+          alt="Deodorant"
+          width={350}
+          height={600}
+          className='object-top rotate-12'
           priority
         />
       </div>
@@ -57,7 +70,7 @@ const Hero = () => {
 
       {/* Bottom Text */}
       <div className="absolute bottom-10 w-full text-center z-20 px-4">
-        <h1 className="text-white uppercase text-3xl md:text-5xl lg:text-7xl font-normal">
+        <h1 className="text-white uppercase text-3xl md:text-5xl lg:text-6xl font-normal">
           It’s Getting Real{' '}
           <span className="font-rofane italic ">Summr</span> Real Soon.
         </h1>
