@@ -177,7 +177,7 @@ const DeoSequence = () => {
 
           // Apply additional zoom for 9:16 images on desktop
           if (isDesktop && is9x16Image) {
-            scaleFactor = 1.7; // Increased zoom for desktop 9:16 images
+            scaleFactor = 1.5; // Increased zoom for desktop 9:16 images
           }
 
           if (canvasAspect > imageAspect) {
@@ -200,7 +200,7 @@ const DeoSequence = () => {
 
       // Single continuous image sequence animation
       masterTl.to({}, {
-        duration: 32, // Total duration for the entire sequence
+        duration: 50, // Total duration for the entire sequence
         ease: "none",
         onUpdate: function () {
           const progress = this.progress();
@@ -213,8 +213,7 @@ const DeoSequence = () => {
             const slowProgress = (progress - 0.125) / (0.75 - 0.125);
             frameIndex = 75 + Math.floor(slowProgress * (140 - 75));
           } else { // 75% to 100% = frames 140-end (normal)
-            const fastProgress = (progress - 0.75) / (1 - 0.75);
-            frameIndex = 140 + Math.floor(fastProgress * (images.length - 140));
+            frameIndex = Math.floor((progress / 0.125) * 75);
           }
           
           frameIndex = Math.min(frameIndex, images.length - 1);
@@ -241,7 +240,7 @@ const DeoSequence = () => {
           duration: 1,
           stagger: 0.2,
           ease: "power3.out"
-        }, 17); // Start when frames 75-140 section begins
+        }, 27); // Start when frames 75-140 section begins
 
       // Hide text animation (after frame 140)
       masterTl.to([capTextRef.current, caseTextRef.current, refillTextRef.current], {
@@ -251,7 +250,7 @@ const DeoSequence = () => {
         duration: 1,
         stagger: 0.1,
         ease: "power2.out"
-      }, 32.5); // Start when frames 140+ section begins
+      }, 42.5); // Start when frames 140+ section begins
 
       // Draw initial frame
       drawFrame(0);
@@ -293,7 +292,7 @@ const DeoSequence = () => {
             <div className='absolute inset-0 flex items-center'>
               <div ref={featuresRef} className='w-1/2 flex justify-center'>
                 <div className='space-y-4 max-w-sm'>
-                  <h1 className=' text-4xl text-center tracking-tight'>
+                  <h1 className=' text-5xl text-center tracking-tight'>
                     96% <br />
                     natural ingredients
                   </h1>
@@ -302,7 +301,7 @@ const DeoSequence = () => {
 
               <div ref={descriptionRef} className='w-1/2 flex justify-center items-start pt-8'>
                 <div className='max-w-sm'>
-                  <h1 className='text-4xl text-center tracking-tight'>
+                  <h1 className='text-5xl text-center tracking-tight'>
                     Plant-powered, no nasties, all-day fresh.
                   </h1>
                 </div>
