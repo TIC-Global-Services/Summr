@@ -213,7 +213,8 @@ const DeoSequence = () => {
             const slowProgress = (progress - 0.125) / (0.75 - 0.125);
             frameIndex = 75 + Math.floor(slowProgress * (140 - 75));
           } else { // 75% to 100% = frames 140-end (normal)
-            frameIndex = Math.floor((progress / 0.125) * 75);
+            const fastProgress = (progress - 0.75) / (1 - 0.75);
+            frameIndex = 140 + Math.floor(fastProgress * (images.length - 140));
           }
           
           frameIndex = Math.min(frameIndex, images.length - 1);
