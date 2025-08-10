@@ -94,14 +94,14 @@ const DeoSequence = () => {
         opacity: 0,
         duration: 3,
         ease: "power2.inOut"
-      }, 2);
+      }, 6);
 
     // Phase 2: Content background appears
     masterTl.to(contentRef.current, {
       opacity: 1,
       duration: 1,
       ease: "power2.out"
-    }, 4);
+    }, 10);
 
     // Phase 3: Title animation
     masterTl.to(titleRef.current, {
@@ -109,7 +109,7 @@ const DeoSequence = () => {
       y: 0,
       duration: 2,
       ease: "power3.out"
-    }, 6);
+    }, 14);
 
     // Phase 4: Features list animation
     masterTl.to(featuresRef.current, {
@@ -117,7 +117,7 @@ const DeoSequence = () => {
       y: 0,
       duration: 3,
       ease: "power3.out"
-    }, 8);
+    }, 20);
 
     // Phase 5: Description animation
     masterTl.to(descriptionRef.current, {
@@ -125,21 +125,21 @@ const DeoSequence = () => {
       y: 0,
       duration: 2,
       ease: "power3.out"
-    }, 10);
+    }, 26);
 
     masterTl.to(description2Ref.current, {
       opacity: 1,
       y: 0,
       duration: 2,
       ease: "power3.out"
-    }, 10);
+    }, 30);
 
     // Phase 6: Content fades out
     masterTl.to(contentRef.current, {
       opacity: 0,
       duration: 2,
       ease: "power2.inOut"
-    }, 11);
+    }, 36);
 
     // Canvas setup and image sequence animation
     if (imagesLoaded && images.length > 0) {
@@ -177,7 +177,7 @@ const DeoSequence = () => {
 
           // Apply additional zoom for 9:16 images on desktop
           if (isDesktop && is9x16Image) {
-            scaleFactor = 1.5; // Increased zoom for desktop 9:16 images
+            scaleFactor = 1.55; // Increased zoom for desktop 9:16 images
           }
 
           if (canvasAspect > imageAspect) {
@@ -208,7 +208,7 @@ const DeoSequence = () => {
           
           // Calculate frame index with different speeds for different ranges
           if (progress <= 0.125) { // 0 to 12.5% = frames 0-74 (fast)
-            frameIndex = Math.floor((progress / 0.125) * 75);
+            frameIndex = Math.floor((progress / 0.125) * 125);
           } else if (progress <= 0.75) { // 12.5% to 75% = frames 75-139 (very slow)
             const slowProgress = (progress - 0.125) / (0.75 - 0.125);
             frameIndex = 75 + Math.floor(slowProgress * (140 - 75));
@@ -224,7 +224,7 @@ const DeoSequence = () => {
             drawFrame(frameIndex);
           }
         }
-      }, 13);
+      }, 40);
 
       // Product text animations tied to scroll progress
       // Show text animation (frames 75-140)
@@ -241,7 +241,7 @@ const DeoSequence = () => {
           duration: 1,
           stagger: 0.2,
           ease: "power3.out"
-        }, 27); // Start when frames 75-140 section begins
+        }, 46); // Start when frames 75-140 section begins
 
       // Hide text animation (after frame 140)
       masterTl.to([capTextRef.current, caseTextRef.current, refillTextRef.current], {
@@ -251,7 +251,7 @@ const DeoSequence = () => {
         duration: 1,
         stagger: 0.1,
         ease: "power2.out"
-      }, 42.5); // Start when frames 140+ section begins
+      }, 72); // Start when frames 140+ section begins
 
       // Draw initial frame
       drawFrame(0);
@@ -290,10 +290,10 @@ const DeoSequence = () => {
               </h2>
             </div>
 
-            <div className='absolute inset-0 flex items-center'>
+            <div className='absolute inset-0 flex items-center justify-between gap-20'>
               <div ref={featuresRef} className='w-1/2 flex justify-center'>
                 <div className='space-y-4 max-w-sm'>
-                  <h1 className=' text-5xl text-center tracking-tight'>
+                  <h1 className=' text-7xl text-center tracking-tight'>
                     96% <br />
                     natural ingredients
                   </h1>
@@ -301,8 +301,8 @@ const DeoSequence = () => {
               </div>
 
               <div ref={descriptionRef} className='w-1/2 flex justify-center items-start pt-8'>
-                <div className='max-w-sm'>
-                  <h1 className='text-5xl text-center tracking-tight'>
+                <div className='max-w-lg'>
+                  <h1 className='text-7xl text-center tracking-tight'>
                     Plant-powered, no nasties, all-day fresh.
                   </h1>
                 </div>
@@ -317,10 +317,12 @@ const DeoSequence = () => {
           </div>
 
           {/* Canvas container - centered */}
-          <div ref={canvasContainerRef} className='absolute inset-0 z-30 flex items-center justify-center'>
-            <canvas
+          <div ref={canvasContainerRef} className='absolute inset-0 z-30 flex items-center justify-center '>
+            
+            
+          <canvas
               ref={canvasRef}
-              className='w-full h-full object-cover'
+              className='w-full h-screen object-top object-cover'
             />
 
             {/* Product Text Overlays */}
