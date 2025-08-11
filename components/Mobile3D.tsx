@@ -110,17 +110,9 @@ const Mobile3D: React.FC = () => {
             },
         });
 
-        gsap.set(canvasContainerRef.current, { opacity: 0 });
+        gsap.set(canvasContainerRef.current, { opacity: 1 });
 
-        masterTl.to(
-            canvasContainerRef.current,
-            {
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
-            },
-            0
-        );
+       
 
         let currentFrame = 0;
 
