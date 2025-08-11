@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SummrHeroBanner, SummrLogoWhite, Deodorant } from '@/assets';
 import DeodorantPng from '@/assets/Home/deodorant-png.png'
+import WaitlistFloat from './WaitlistFloat';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,6 +68,10 @@ const Hero = () => {
           width={120}
           height={120}
         />
+      </div>
+
+      <div className=''>
+        <WaitlistFloat />
       </div>
 
       {/* Bottom Text */}
