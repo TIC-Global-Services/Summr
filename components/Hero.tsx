@@ -80,7 +80,7 @@ const Hero = () => {
 
         <div className="absolute bottom-10 w-full text-center z-20 px-4">
           <h1 className="text-white uppercase text-3xl md:text-5xl lg:text-6xl font-normal">
-            It’s Getting Real{' '}
+            It&apos;s Getting Real{' '}
             <span className="font-rofane italic">Summr</span> Real Soon.
           </h1>
         </div>
