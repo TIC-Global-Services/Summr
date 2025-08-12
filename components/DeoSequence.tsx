@@ -60,8 +60,8 @@ const DeoSequence = () => {
     const masterTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
-        end: "+=3000dvh", // Increased for slower animation
+        start: "top top", // This will trigger when the DeoSequence reaches the top
+        end: "+=3000vh", // Use vh for consistency and proper calculation
         scrub: 0.2,
         pin: stickyRef.current,
         markers: false,
@@ -265,7 +265,8 @@ const DeoSequence = () => {
   }, [imagesLoaded, images]);
 
   return (
-    <div ref={containerRef} className='relative border-b' >
+    // Added margin-top to create space after the pinned Hero section
+    <div ref={containerRef} className='relative border-b'>
       <div ref={stickyRef} className='h-screen relative overflow-hidden'>
         <div
           ref={leftRef}
@@ -384,3 +385,4 @@ const DeoSequence = () => {
 };
 
 export default DeoSequence;
+                

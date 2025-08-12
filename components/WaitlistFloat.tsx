@@ -14,7 +14,7 @@ type WaitlistFloatProps = {
 
 export default function WaitlistFloat({
     brandName = "Summr",
-    collapseOffset = 140,
+    collapseOffset = 430,
     className,
 }: WaitlistFloatProps = {}) {
     const [minimized, setMinimized] = useState(false)
@@ -80,7 +80,7 @@ export default function WaitlistFloat({
             {/* Expanded glass panel */}
             <div
                 className={cn(
-                    "fixed top-8 right-8 z-50 transition-all duration-500 ease-out",
+                    "fixed top-8 right-8 z-100 transition-all duration-500 ease-out ",
                     minimized ? "pointer-events-none opacity-0 translate-y-8 scale-95" : "opacity-100 translate-y-0 scale-100",
                     className,
                 )}
@@ -174,7 +174,7 @@ export default function WaitlistFloat({
             {/* Minimized pill button */}
             <div
                 className={cn(
-                    "fixed bottom-8 right-8 z-40 transition-all duration-500 ease-out",
+                    "fixed bottom-8 right-8 z-100 transition-all duration-500 ease-out",
                     minimized ? "opacity-100 translate-y-0 scale-100" : "pointer-events-none opacity-0 translate-y-8 scale-95",
                 )}
             >
