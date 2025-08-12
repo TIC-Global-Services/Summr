@@ -189,9 +189,7 @@ export default function WaitlistFloat({
                     <div className="relative flex items-center gap-3">
                         <Droplets className="h-5 w-5 text-cyan-600" />
                         <span className="font-medium">Join Waitlist</span>
-                        <div className="w-8 h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full w-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                        </div>
+                        
                     </div>
                 </button>
             </div>
